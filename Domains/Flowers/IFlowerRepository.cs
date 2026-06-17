@@ -1,5 +1,4 @@
-using CSWeb_Sample.Domains.Flowers;
-namespace CSWeb_Sample.Domains.Interface.Flowers;
+namespace CSWeb_Sample.Domains.Flowers;
 /// <summary>
 /// Flower(花)をアクセスするRepositoryインターフェイス
 /// </summary>
