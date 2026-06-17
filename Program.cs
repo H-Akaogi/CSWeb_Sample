@@ -1,7 +1,12 @@
+using CSWeb_Sample.Configs;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// DIコンテナへの依存関係登録を集約する(追加)
+DependencyInjection.AddApplication(builder.Services, builder.Configuration);
 
 var app = builder.Build();
 

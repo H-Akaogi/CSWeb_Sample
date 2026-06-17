@@ -1,0 +1,42 @@
+@using CSWeb_Sample.Domains.Flowers
+@model List<Flower>
+
+<h1>季節の花一覧(C#)</h1>
+
+@if (Model == null || Model.Count == 0)
+{
+    <p>データがありません。</p>
+}
+else
+{
+    < table class= "table" >
+        < thead >
+            < tr >
+                < th > ID </ th >
+                < th > 名前 </ th >
+                < th > 季節 </ th >
+                < th > 画像 </ th >
+                < th > 登録日 </ th >
+            </ tr >
+        </ thead >
+        < tbody >
+        @foreach(var flower in Model)
+        {
+            < tr >
+                < td > @flower.Id </ td >
+                < td > @flower.Name </ td >
+                < td > @flower.Season </ td >
+                < td >
+                    @if(!string.IsNullOrWhiteSpace(flower.ImageUrl))
+                    {
+                        < img src = "@flower.ImageUrl"
+                             alt = "@flower.Name"
+                             style = "max-height:80px;" />
+                    }
+                </ td >
+                < td > @flower.CreatedAt.ToString("yyyy-MM-dd") </ td >
+            </ tr >
+        }
+        </ tbody >
+    </ table >
+}
