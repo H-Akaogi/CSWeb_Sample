@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/CSWeb_Sample.props" />
+</Project>
